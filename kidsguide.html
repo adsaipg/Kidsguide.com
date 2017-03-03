@@ -1,0 +1,387 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<title>Page
+</title>
+<style>
+
+#d1{background-color:white;width:100%;height:800px;margin-right:0px;}
+#d2{background-colo:grey;width:100%;height:160px;}
+#d3{background-colo:black;width:100%;height:410px;}
+#d4{background-colo:grey;width:100%;height:120px;font-size:30px;margin-left:150px;color:#212834}
+#d5{background-colo:;width:200px;height:430px;margin-left:100px;float:left}
+#header{margin-left:100px;margin-top:60px;font-size:40px;color:lightgreen;text-shadow:3px 3px 3px #212834;}
+#s1{font-size:20px;color:lightgreen;font-family:courier;text-shadow:1px 1px 1px #212834;}
+#s2{font-size:10px;color:#212834;font-family:courier}
+#s4{font-size:25px;color:#212834;font-family:courier}
+#s5{font-size:16px;color:white;font-family:courier}
+#s6{font-size:16px;color:white;font-family:courier}
+#s3{margin-left:1100px;}
+#check{width:100%;height:60px;}
+#check1{width:100%;height:100px;}
+#b1 {
+  display: inline-block;
+  border-radius: 4px;
+  background-color:#f4511e;
+  border: none;
+  color:#FFFFFF;
+  text-align: center;
+  font-size: 17px;
+  padding: 10px;
+  width: 150px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-top: 20px;
+  margin-bottom:0px;
+}
+
+#b1 span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+#b1 span:after {
+  content:'>>';
+  font-size:17px;
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+#b1:hover span {
+  padding-right: 25px;
+}
+
+#b1:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+#b2 {
+  display: inline-block;
+  border-radius: 4px;
+  background-color:#f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 17px;
+  padding: 10px;
+  width: 150px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-top: 5px;
+  
+}
+
+#b2 span {
+  
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+#b2 span:after {
+  content:'>>';
+  font-size:17px;
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  
+  transition: 0.5s;
+}
+
+#b2:hover span {
+  padding-right: 25px;
+  }
+
+#b2:hover span:after {
+  opacity: 1;
+  right: 0;
+ 
+}
+	
+	
+#gallery{width:922px;height:100%;background-color:;float:left;margin:30px;border-radius:50px;
+-webkit-animation-name:a;
+-webkit-animation-duration:40s;
+-webkit-transition-timing-function: ;
+background-image:url("image1.jpg");
+-webkit-transition-delay: 1s;
+-webkit-transform-style: preserve-3d;
+-webkit-backface-visibility: hidden;
+-webkit-transition: -webkit-transform 2000ms;
+-webkit-transform: translate3d(0, 0, 0);
+background-size:100% 100%;
+}
+@-webkit-keyframes a{
+14% {background-image:url("image2.jpg");}
+29% {background-image:url("image3.jpg");}
+42% {background-image:url("image4.jpg");}
+57% {background-image:url("image5.jpg");}
+71% {background-image:url("image6.jpg");}
+86% {background-image:url("image7.jpg");}
+100% {background-image:url("image8.jpg");}
+}
+
+.ontop {
+				z-index: 100;
+				width: 100%;
+				height: 100%;
+				top:0 ;
+				left:0;
+				display: none;
+				position: absolute;				
+				background-color: #cccccc;
+				color: #000000;
+				opacity: .9;
+				filter: alpha(opacity = 70);
+				transition:ease 1.5s all;
+				transition: color 1s ease;
+				
+			}
+			
+
+
+
+.popd{
+background-color: white;
+    margin-top: 60px;
+	margin-left:450px;
+    padding: 20px;
+	position: absolute;
+    border: 1px solid red;
+	transition:ease 1.5s all;
+	transition: color 1s ease;
+    width: 30%;
+	box-shadow:10px 10px 10px #888888;
+	color: blue;
+	backface-visibility:hidden;
+	opacity: 0.999;
+    filter: alpha(opacity = 100);
+	border-radius:30px;
+	
+}
+
+</style>
+</head>
+<body>
+<script>
+function call(div){
+document.getElementById(div).style.display = 'block';
+document.getElementById('d1').style['-webkit-transition-duration'] = '3s';
+
+}
+function hide(div1,div2) {
+				document.getElementById(div1).style.display = 'none';
+				document.getElementById(div2).style.display = 'none';
+				document.frm1.t1.value="";
+				document.frm1.t1.style.border="none";
+				document.frm1.t2.value="";
+				document.frm1.t2.style.border="none";
+				document.frm1.t3.value="";
+				document.frm1.t3.style.border="none";
+				document.frm1.t4.value="";
+				document.frm1.t4.style.border="none";
+				document.frm1.t5.value="";
+				document.frm1.t5.style.border="none";
+				document.getElementById('err').innerHTML ="";
+				document.getElementById('err2').innerHTML ="";
+				
+			}
+			document.onkeydown = function(evt) {
+				evt = evt || window.event;
+				if (evt.keyCode == 27) {
+					hide('popDiv','popDiv2');
+					
+
+				}
+			};
+			
+var c=0;			
+window.onresize=function(evt){
+if(c%2==0){
+alert("Content may dispersed!");
+c=c+1;}
+else
+c=c+1;
+}			
+
+
+function valid()
+{
+if(document.frm1.t1.value=="")
+{
+alert("user id can't be left blank");
+document.frm1.t1.focus();
+document.frm1.t1.style.border="2px solid red";
+return false;
+}
+if(document.frm1.t2.value=="")
+{
+alert("password can't be left blank");
+document.frm1.t2.focus();
+document.frm1.t2.style.border="2px solid red";
+return false;
+}
+if(document.frm1.t4.value=="")
+{
+alert("username can't be left blank");
+document.frm1.t4.focus();
+document.frm1.t4.style.border="2px solid red";
+return false;
+}
+if(document.frm1.t5.value=="")
+{
+alert("email can't be left blank");
+document.frm1.t5.focus();
+document.frm1.t5.style.border="2px solid red";
+return false;
+}
+if(document.frm1.t2.value.length<6)
+{
+alert("password can't be less than 6 character");
+document.frm1.t2.focus();
+document.frm1.t2.style.border="2px solid red";
+return false;
+}
+if(document.frm1.t2.value!=document.frm1.t3.value)
+{
+alert("confirm password and password are not same");
+document.frm1.t3.focus();
+document.frm1.t3.style.border="2px solid red";
+return false;
+}
+if(document.frm1.t2.value==document.frm1.t3.value){
+document.getElementById("err").innerHTML=""
+}
+}
+function test()
+{
+if(document.frm1.t2.value==document.frm1.t3.value)
+{
+document.getElementById("err2").innerHTML="";
+}
+if(document.frm1.t2.value.length<6)
+{
+document.getElementById("err").innerHTML="<font color=red>Not valid</font>";
+return false;
+}
+else
+if((document.frm1.t2.value.length)>6 && (document.frm1.t2.value.length)<8)
+{
+document.getElementById("err").innerHTML="<font color=orange>Weak</font>"
+}
+else
+
+if((document.frm1.t2.value.length)>8 && (document.frm1.t2.value.length)<12)
+{
+
+document.getElementById("err").innerHTML="<font color=lightgreen>Normal</font>"
+}
+else
+if(document.frm1.t2.value.length>12)
+{
+
+document.getElementById("err").innerHTML="<font color=darkgreen>Strong</font>"
+}
+}
+function focus_f()
+{
+document.getElementById("err").innerHTML=""
+}		
+function outfocs()
+{
+if(document.frm1.t2.value!=document.frm1.t3.value)
+{
+document.getElementById("err2").innerHTML="<font color=red>Error!</font>";
+}
+if(document.frm1.t2.value==document.frm1.t3.value)
+{
+document.getElementById("err2").innerHTML="";
+}
+}
+
+</script
+<div id=d1>
+
+<div id="popDiv" class="ontop">
+
+<div class=popd  id="myPopup" class="ui-content ui-popup ui-body-inherit ui-overlay-shadow ui-corner-all">
+
+      
+  <form name="frm1" method="post" action="save.php" onsubmit="return valid()">  
+<center><span id=s4>SIGN UP</span></center></br>
+<span>
+<input type=text name="t1" placeholder="user id" ><br>
+<input type=password name="t2" placeholder="enter password" topmargin="2px" onkeyup="test()" onfocusout="focus_f()">
+<span id=err></span><br>
+<input type=password name="t3" placeholder="confirm password" onfocusout="outfocs()" onkeyup="test()">
+<span id=err2></span><br>
+<input type="text" name="t4" placeholder="user name"><br>
+<input type="text" name="t5" placeholder="email-id"><br>
+<input type="submit" value="Submit"></br>
+
+			
+						
+					<center>	<a href="#" onClick="hide('popDiv')">Close</a></center>
+				
+</span></form>		</div></div>
+
+<div id="popDiv2" class="ontop">
+<div class=popd>
+<form name="frm1" method="post" action="save.php" onsubmit="return valid()">  
+<center><span id=s4>LOGIN</span></center></br>
+<span>
+<input type=text name="t1" placeholder="user id" ><br>
+<input type=password name="t2" placeholder="enter password" topmargin="2px" onkeyup="test()" onfocusout="focus_f()">
+<span id=err></span><br>
+<input type="text" name="t5" placeholder="email-id"><br>
+<input type="submit" value="Login"></br>
+
+			
+						
+					<center>	<a href="#" onClick="hide('popDiv2')">Close</a></center>
+				
+</span></form>		</div></div>
+		
+
+
+<div id=d2>
+
+
+<div id=check><div id=s3 data-role="main" class="ui-content"><im src="search1.jpg" width="30px" height="30px"><br>
+<button  id="b1"  onclick="call('popDiv')" data-rel="popup" class="ui-btn" data-transition="turn">
+<span id=s5>Register</span></button>
+<button type="submit" id="b2"  onclick="call('popDiv2')" data-rel="popup" class="ui-btn" data-transition="turn">
+<span id=s6>Login</span></button>
+</div></div>
+<span id=header>KIDS<span id=s1>guide.com</span></span>
+
+</div>
+
+		
+<div id=d3>
+<div id=d5><span id=s2>GUIDE AVAILABLE FOR:</span>
+<iframe width="200" height="420" frameborder="10" marginheight="0"  width="100%"
+src="frame.html"></iframe>
+</div>
+<div id=gallery>
+
+</div>
+</div>
+<div id=d4><div id=check1></div>Buy Book Online:<a href="http://www.flipkart.com/search?q=book&otracker=start&as-show=on&as=off" target="_blank" style="text-decoration:none;">
+<img src="flip.jpg" width="40px" height="40px"
+hspace="20"></a><a href="http://www.amazon.in/s/ref=nb_sb_noss?url=search-alias%3Daps&field-keywords=book" style="text-decoration:none;" target="_blank"><img src="amazon.jpg" width="40px" height="40px" hspace="20"></a></div>
+</div>
+
+</body>
+</html>

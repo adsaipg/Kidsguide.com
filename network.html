@@ -1,0 +1,122 @@
+<html>
+<head>
+<style>
+#d1{width:100%;height:100px;background-color:#212834;color:lightgreen;font-size:40px;
+text-shadow:3px 3px 3px white}
+#s1{font-size:20px;color:lightgreen;font-family:courier}
+#d3{width:30%;height:150px;margin:30px;margin-left:100px}
+#d2{width:30%;height:30px;margin:30px;font-size:25px;color:#212834;text-shadow:1px 1px 1px;margin-left:100px}
+#d4{width:30%;height:30px;text-shadow:1px 1px 0px red;padding:30px;margin-left:70px}
+#d6{width:30%;height:90px;margin:30px;margin-left:100px}
+#d5{width:100%;height:20px;font-size:15px;color:white;background:-webkit-linear-gradient(black,skyblue,black)}
+#d7{width:25%;height:450px;font-size:20px;color:white;float:right;border-radius:50px;
+background-color:#212834;margin-right:30px;margin-top:30px;}
+a{text-decoration:none}
+#s2{margin-left:100px;margin-top:30px;}
+</style>
+</head>
+<body>
+<script>
+function valid()
+{
+if(document.frm1.t1.value=="")
+{
+alert("user id can't be left blank");
+document.frm1.t1.focus();
+document.frm1.t1.style.border="2px solid red";
+return false;
+}
+if(document.frm1.t2.value=="")
+{
+alert("password can't be left blank");
+document.frm1.t2.focus();
+document.frm1.t2.style.border="2px solid red";
+return false;
+}
+if(document.frm1.t2.value.length<6)
+{
+alert("password can't be less than 6 character");
+document.frm1.t2.focus();
+document.frm1.t2.style.border="2px solid red";
+return false;
+}
+if(document.frm1.t2.value!=document.frm1.t3.value)
+{
+alert("confirm password and password are not same");
+document.frm1.t3.focus();
+document.frm1.t3.style.border="2px solid red";
+return false;
+}
+}
+function test()
+{
+
+if(document.frm1.t2.value.length<6)
+{
+document.getElementById("err").innerHTML="<font color=red>not valid</font>";
+return false;
+}
+else
+if((document.frm1.t2.value.length)>6 && (document.frm1.t2.value.length)<8)
+{
+document.getElementById("err").innerHTML="<font color=orange>weak</font>"
+}
+else
+
+if((document.frm1.t2.value.length)>8 && (document.frm1.t2.value.length)<12)
+{
+
+document.getElementById("err").innerHTML="<font color=lightgreen>normal</font>"
+}
+else
+if(document.frm1.t2.value.length>12)
+{
+
+document.getElementById("err").innerHTML="<font color=darkgreen>strong</font>"
+}
+}
+function not()
+{
+var i=prompt("enter the user name");
+if(i=="")
+{
+alert("user name invalid");
+return false;
+}
+else
+{
+alert("welcome "+i);
+}
+}
+</script>
+<div id=d1><span id=s2>KIDS</span><span id=s1>guide.com</span></div>
+<span><table border="2" width="100%" bordercolor="black"></table></span>
+<span><table border="2" width="100%" bordercolor="red"></table></span>
+<span><table border="2" width="100%" bordercolor="green"></table></span>
+<span><table border="2" width="100%" bordercolor="black"></table></span>
+<span id=d7><div><marquee direction="up" onmouseover="stop()" onmouseout="start()"> 
+<ul><li>Enter a valid user id.That user id must easily remember to you.</li>
+<li>Enter a valid,easy and strong password.That password must easily remember to you.</li>
+<li>User name is not necessary.You can leave it.</li>
+<li>Email-id is must.Please enter a valid e-mail id.In case you forgotten your password,new 
+password will be sent in your entered email-id.</li></ul></marquee>
+</div></span>
+<span id=s1><div id=d2>SIGN UP</div></span>
+<span id=s2><div id=d3>
+<form name="frm1" method="post" action="save.php" onsubmit="return valid()">
+<input type=text name="t1" placeholder="user id"><br>
+<input type=password name="t2" placeholder="enter password" onkeyup="test()">
+<span id=err></span><br>
+<input type=password name="t3" placeholder="confirm password"><br>
+<input type="text" placeholder="user name"><br>
+<input type="text" placeholder="email-id"><br>
+<input type="submit" value="submit">
+</form></div></span>
+<span id=s3><form name="frm2" method="post" action="save.php" onsubmit="return not()">
+<div id=d4><table border="2" width="267px" bordercolor="green" color="red"><tr><td>IF ALREADY REGISTERED:-<input type="submit" value="Login">
+</td></tr></table></div></form></span>
+<span><div id=d6><table border="2" width="400px" bordercolor="black"></table><ul type="square"><li>
+For more help<a href="help.html" target="blank"><b><i> click here </i></b></a>!</li></ul></div></span>
+<center><div id=d5>copyright &copy;BY:ADARSH SINGH</div></center>
+</body>
+</html>
